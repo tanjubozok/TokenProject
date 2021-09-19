@@ -4,4 +4,17 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="ComplexTypes\**" />
+    <Compile Remove="Models\**" />
+    <EmbeddedResource Remove="ComplexTypes\**" />
+    <EmbeddedResource Remove="Models\**" />
+    <None Remove="ComplexTypes\**" />
+    <None Remove="Models\**" />
+  </ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\TokenProject.Core\TokenProject.Core.csproj" />
+	</ItemGroup>
+
 </Project>
