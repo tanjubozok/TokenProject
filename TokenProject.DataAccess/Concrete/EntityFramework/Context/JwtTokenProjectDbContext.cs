@@ -16,11 +16,11 @@ namespace TokenProject.DataAccess.Concrete.EntityFramework.Context
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=.;Database=JsonWebToken;Trusted_Connection=true");
+            optionsBuilder.UseSqlServer(@"Server=.;Database=Northwind;Trusted_Connection=true");
         }
 
-        public DbSet<OperationClaim> OperationClaim { get; set; }
-        public DbSet<User> User { get; set; }
-        public DbSet<UserOperationClaim> UserOperationClaim { get; set; }
+        public DbSet<OperationClaim> OperationClaims { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<UserOperationClaim> UserOperationClaims { get; set; }
     }
 }

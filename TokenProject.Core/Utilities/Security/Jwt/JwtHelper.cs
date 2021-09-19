@@ -62,7 +62,7 @@ namespace TokenProject.Core.Utilities.Security.Jwt
         {
             var claims = new List<Claim>();
             claims.Add(new Claim(JwtRegisteredClaimNames.Email, user.Email));
-            claims.Add(new Claim(ClaimTypes.NameIdentifier, user.UserId.ToString()));
+            claims.Add(new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()));
             claims.Add(new Claim(ClaimTypes.Name, $"{ user.FirstName} { user.LastName}"));
             operationClaims.Select(x => x.Name).ToList().ForEach(role => claims.Add(new Claim(ClaimTypes.Role, role)));
             return claims;

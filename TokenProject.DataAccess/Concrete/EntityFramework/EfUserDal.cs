@@ -12,10 +12,10 @@ namespace TokenProject.DataAccess.Concrete.EntityFramework
         public List<OperationClaim> GetClaims(User user)
         {
             using var context = new JwtTokenProjectDbContext();
-            var result = from uoc in context.UserOperationClaim
-                         join oc in context.OperationClaim
+            var result = from uoc in context.UserOperationClaims
+                         join oc in context.OperationClaims
                              on uoc.Id equals oc.Id
-                         where uoc.UserId == user.UserId
+                         where uoc.UserId == user.Id
                          select new OperationClaim { Id = oc.Id, Name = oc.Name };
             return result.ToList();
         }
